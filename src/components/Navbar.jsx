@@ -59,8 +59,8 @@ function Navbar() {
     >
       <nav className="section-shell flex h-[68px] items-center justify-between" aria-label="Main navigation">
         <a href="#home" className="group flex items-center gap-3" aria-label="Rana Hassan home">
-          <span className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-brand to-purple font-display text-sm font-extrabold text-white shadow-soft transition-transform group-hover:-rotate-3">
-            RH
+          <span className="grid size-10 place-items-center overflow-hidden rounded-xl bg-gradient-to-br from-brand to-purple font-display text-sm font-extrabold text-white shadow-soft transition-transform group-hover:-rotate-3">
+            <img className="navbar-profile-photo" src="/rana-hassan-profile.jpeg" alt="" />
           </span>
           <span className="font-display inline text-[15px] font-extrabold tracking-[-0.02em] text-ink sm:text-base md:hidden lg:inline">
             Rana Hassan

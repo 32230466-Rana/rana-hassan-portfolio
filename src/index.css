@@ -493,6 +493,14 @@ a {
   color: #fff;
 }
 
+.hero-avatar-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
 .hero-avatar-inner::after {
   position: absolute;
   inset: auto -20% -32% -20%;
@@ -803,7 +811,9 @@ a {
 }
 
 .about-avatar-large {
+  position: relative;
   display: grid;
+  overflow: hidden;
   width: 9.4rem;
   height: 9.4rem;
   place-items: center;
@@ -820,6 +830,22 @@ a {
     0 0 0 12px rgba(99, 102, 241, 0.07);
 }
 
+.about-avatar-large img {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.navbar-profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
 .about-avatar-dot {
   --dot-radius: 6.35rem;
   position: absolute;
@@ -1233,6 +1259,15 @@ a {
   }
 }
 
+@keyframes hero-drift-left {
+  from {
+    transform: translate3d(calc(100vw + 9rem), 0, 0);
+  }
+  to {
+    transform: translate3d(-9rem, 0, 0);
+  }
+}
+
 @keyframes soft-shine {
   0%,
   100% {
@@ -1415,14 +1450,18 @@ a {
     margin-top: -0.25rem;
     padding: 0.9rem 0 1.2rem;
   }
-  .hero-drift-badge:nth-child(n + 4) {
-    display: none;
+  .hero-drift-badge {
+    border-color: rgba(99, 102, 241, 0.34);
+    background: rgba(255, 255, 255, 0.94);
+    padding: 0.42rem 0.58rem;
+    color: rgba(67, 56, 202, 0.92);
+    font-size: 0.66rem;
+    box-shadow: 0 10px 28px rgba(79, 70, 229, 0.18), 0 0 20px rgba(99, 102, 241, 0.12);
+    opacity: 0.92;
   }
 
-  .hero-drift-badge {
-    padding: 0.34rem 0.48rem;
-    font-size: 0.58rem;
-    opacity: 0.68;
+  .hero-drift-badge:nth-child(even) {
+    animation-name: hero-drift-left;
   }
   .hero-stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1482,7 +1521,29 @@ a {
   }
 
   .hero-mini-card {
-    display: none;
+    display: flex;
+    gap: 0.35rem;
+    padding: 0.52rem 0.62rem;
+    border-radius: 0.75rem;
+    font-size: 0.6rem;
+  }
+
+  .hero-mini-card-left {
+    bottom: 1rem;
+    left: 0.6rem;
+  }
+
+  .hero-mini-card-right {
+    top: 1rem;
+    right: 0.6rem;
+  }
+
+  .premium-card:active::after,
+  .premium-card-dark:active::after,
+  .shine-surface:active::after,
+  .shine-button:active::before {
+    opacity: 1;
+    transform: translateX(42%) skewX(-12deg);
   }
 
   .about-avatar-dot {

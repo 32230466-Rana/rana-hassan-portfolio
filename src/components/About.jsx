@@ -77,7 +77,7 @@ function About() {
                     }}
                   />
                 ))}
-                <div className="about-avatar-large">RH</div>
+                <div className="about-avatar-large"><img src="/rana-hassan-profile.jpeg" alt="Rana Hassan" /></div>
               </div>
 
               <div className="text-center">
@@ -109,7 +109,12 @@ function About() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={slideRight}>
+          <motion.div
+            variants={slideRight}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ ...viewportOnce, amount: 0.25 }}
+          >
             <SectionHeading eyebrow="About me" title="Professional summary" />
 
             <motion.div className="about-summary-copy" variants={staggerContainer}>

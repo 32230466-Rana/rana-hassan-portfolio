@@ -314,7 +314,7 @@ function HeroVisual() {
           >
             <div className="hero-avatar-glow" />
             <div className="hero-avatar-inner">
-              <span className="hero-avatar-mark">RH</span>
+              <img className="hero-avatar-photo" src="/rana-hassan-profile.jpeg" alt="Rana Hassan" />
               <span className="hero-avatar-code">&lt;/&gt;</span>
             </div>
           </motion.div>
