@@ -20,7 +20,7 @@ import {
   Tags,
   Upload,
 } from "lucide-react";
-import { LayoutGroup, motion, useReducedMotion } from "framer-motion";
+import { LayoutGroup, motion } from "framer-motion";
 import landingPageScreenshot from "../assets/studyflow/landing-page.png";
 import askPdfScreenshot from "../assets/studyflow/ask-pdf-summary.png";
 import summaryScreenshot from "../assets/studyflow/summary-result.png";
@@ -261,7 +261,7 @@ function StudyFlowSystemDemo() {
   const [isRunning, setIsRunning] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const timersRef = useRef([]);
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = false;
 
   const clearDemoTimers = () => {
     timersRef.current.forEach((timer) => window.clearTimeout(timer));

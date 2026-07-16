@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { BrainCircuit, CloudUpload, Database, Server } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const floatingItems = ["React", "Laravel", "AI", "API"];
 
 function AnimatedBackground() {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = false;
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
   useEffect(() => {

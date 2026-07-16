@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { cardHover, fadeUp, staggerContainer, viewportOnce } from "../lib/animations";
+import { cardHover, fadeUp, slideLeft, slideRight, staggerContainer, viewportOnce } from "../lib/animations";
 
 const highlights = [
   {
@@ -75,11 +75,11 @@ function ProfessionalHighlights() {
           whileInView="show"
           viewport={viewportOnce}
         >
-          {highlights.map(({ title, description, icon: Icon }) => (
+          {highlights.map(({ title, description, icon: Icon }, index) => (
             <motion.article
               key={title}
               className="highlight-card premium-card"
-              variants={fadeUp}
+              variants={index % 2 === 0 ? slideLeft : slideRight}
               whileHover={cardHover}
             >
               <span className="highlight-icon">

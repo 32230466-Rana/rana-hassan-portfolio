@@ -103,7 +103,7 @@ function Contact() {
       return;
     }
 
-    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim();
+    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim() || "https://formspree.io/f/xqevzdnb";
     if (!endpoint || endpoint.includes("YOUR_FORM_ID")) {
       setStatus({
         type: "error",

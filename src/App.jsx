@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, MotionConfig, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import StudyFlow from "./components/StudyFlow";
@@ -18,7 +18,7 @@ import BackToTop from "./components/BackToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = false;
 
   useEffect(() => {
     const timer = window.setTimeout(
@@ -30,7 +30,7 @@ function App() {
   }, [prefersReducedMotion]);
 
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion="never">
       <AnimatePresence mode="wait">{loading && <Preloader />}</AnimatePresence>
       {!loading && (
         <motion.div

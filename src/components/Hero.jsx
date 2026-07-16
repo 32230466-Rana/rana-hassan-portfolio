@@ -18,7 +18,7 @@ import {
   Wind,
   Zap,
 } from "lucide-react";
-import { AnimatePresence, animate, motion, useInView, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
+import { AnimatePresence, animate, motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
 import {
   buttonHover,
   cardHover,
@@ -132,7 +132,7 @@ function TypingRole() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [visibleText, setVisibleText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = false;
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -181,7 +181,7 @@ function AnimatedCounter({ value, textValue }) {
   const isInView = useInView(counterRef, { amount: 0.65 });
   const counter = useMotionValue(0);
   const roundedCounter = useTransform(counter, (latest) => Math.round(latest));
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = false;
 
   useEffect(() => {
     if (textValue) return undefined;
@@ -221,7 +221,7 @@ function AnimatedCounter({ value, textValue }) {
 }
 
 function HeroVisual() {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = false;
   const tiltX = useMotionValue(0);
   const tiltY = useMotionValue(0);
   const smoothTiltX = useSpring(tiltX, { stiffness: 140, damping: 20, mass: 0.55 });

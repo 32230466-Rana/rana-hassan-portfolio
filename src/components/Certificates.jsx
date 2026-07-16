@@ -1,7 +1,7 @@
 import { Award, CalendarDays, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { cardHover, fadeUp, staggerContainer, viewportOnce } from "../lib/animations";
+import { cardHover, fadeUp, slideLeft, slideRight, staggerContainer, viewportOnce } from "../lib/animations";
 
 const certificates = [
   {
@@ -42,11 +42,11 @@ function Certificates() {
           whileInView="show"
           viewport={viewportOnce}
         >
-          {certificates.map((certificate) => (
+          {certificates.map((certificate, index) => (
             <motion.article
               key={`${certificate.title}-${certificate.date}`}
               className="premium-card rounded-3xl border border-line bg-surface p-6 shadow-card"
-              variants={fadeUp}
+              variants={index % 2 === 0 ? slideLeft : slideRight}
               whileHover={cardHover}
             >
               <span className="grid size-12 place-items-center rounded-2xl bg-brand-soft text-brand shadow-sm">
