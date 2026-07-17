@@ -2,7 +2,7 @@ import { BrainCircuit, Braces, Code2, Database, Layers3, MonitorSmartphone, Wren
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import {
-  darkCardHover,
+  cardHover,
   fadeUp,
   slideLeft,
   slideRight,
@@ -106,9 +106,9 @@ const skillGroups = [
 ];
 function Skills() {
   return (
-    <section id="skills" className="relative scroll-mt-20 overflow-x-hidden bg-ink py-24 text-white sm:py-28">
-      <div className="dark-section-glow dark-section-glow-one" />
-      <div className="dark-section-glow dark-section-glow-two" />
+    <section id="skills" className="skills-light-section relative scroll-mt-20 overflow-x-hidden bg-white py-24 text-ink sm:py-28">
+      <div className="section-glow skills-section-glow skills-section-glow-one" />
+      <div className="section-glow skills-section-glow skills-section-glow-two" />
       <div className="section-shell">
         <div className="grid gap-14 lg:items-start">
           <motion.div
@@ -121,7 +121,6 @@ function Skills() {
               eyebrow="Technical toolkit"
               title="The right tools for complete products."
               description="A balanced stack for building responsive interfaces, robust APIs, data-driven dashboards, testing workflows, and useful AI features."
-              tone="dark"
             />
             <div className="mx-auto mt-8 h-px w-24 bg-gradient-to-r from-indigo-400 to-purple-400 lg:mx-0" />
           </motion.div>
@@ -136,12 +135,12 @@ function Skills() {
             {skillGroups.map(({ title, icon: Icon, skills }, index) => (
               <motion.div
                 key={title}
-                className="skill-progress-card premium-card-dark"
+                className="skill-progress-card premium-card"
                 variants={index % 2 === 0 ? slideLeft : slideRight}
               initial="hidden"
               whileInView="show"
               viewport={{ ...viewportOnce, amount: 0.18 }}
-                whileHover={darkCardHover}
+                whileHover={cardHover}
               >
                 <div className="skill-progress-header">
                   <span>
@@ -153,7 +152,7 @@ function Skills() {
                   {skills.map((skill) => (
                     <motion.span
                       key={skill}
-                      className="rounded-full border border-white/10 bg-white/7 px-3 py-1.5 text-xs font-extrabold text-slate-200 shadow-[0_8px_22px_rgba(0,0,0,0.12)] transition hover:border-indigo-300/40 hover:bg-indigo-400/12 hover:text-white"
+                      className="skill-chip rounded-full px-3 py-1.5 text-xs font-extrabold transition"
                       variants={fadeUp}
                     >
                       {skill}
