@@ -16,6 +16,7 @@
 }
 
 :root {
+  color-scheme: only light;
   font-family: var(--font-sans);
   color: var(--color-ink);
   background: var(--color-surface);
@@ -25,6 +26,7 @@
 }
 
 body {
+  forced-color-adjust: none;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
