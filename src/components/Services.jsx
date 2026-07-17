@@ -53,7 +53,7 @@ const services = [
 
 function Services() {
   return (
-    <section id="services" className="relative scroll-mt-20 overflow-hidden py-24 sm:py-28">
+    <section id="services" className="relative scroll-mt-20 overflow-x-hidden py-24 sm:py-28">
       <div className="section-glow section-glow-services" />
       <div className="section-shell">
         <motion.div

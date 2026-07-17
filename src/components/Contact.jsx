@@ -187,7 +187,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="contact-section relative scroll-mt-20 overflow-hidden py-24 sm:py-28"
+      className="contact-section relative scroll-mt-20 overflow-x-hidden py-24 sm:py-28"
     >
       <div className="section-glow contact-section-glow" />
       <div className="section-shell">

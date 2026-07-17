@@ -2444,3 +2444,201 @@ a {
     translate: -50% -50%;
   }
 }
+
+/* Mobile scrolling QA safeguards */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: auto;
+  touch-action: pan-y pinch-zoom;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: visible;
+  overscroll-behavior-y: auto;
+  touch-action: pan-y pinch-zoom;
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+button,
+a,
+input,
+textarea {
+  touch-action: manipulation;
+}
+
+@media (max-width: 767px) {
+  .section-shell {
+    width: min(100% - 1.25rem, 72.5rem);
+  }
+
+  .hero-drift-field,
+  .floating-tech-field {
+    display: none;
+  }
+
+  .hero-copy,
+  .hero-main-grid,
+  .hero-main-grid > *,
+  .project-main-card,
+  .project-preview-card,
+  .studyflow-system-demo,
+  .studyflow-demo-flow,
+  .contact-layout,
+  .experience-entry,
+  .experience-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-name {
+    max-width: 100%;
+    font-size: clamp(2.75rem, 14vw, 4.25rem);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-copy-heading {
+    max-width: 100%;
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-orbit-wrap,
+  .hero-orbit-scene {
+    width: 100%;
+    max-width: 100%;
+    overflow: clip;
+  }
+
+  .hero-orbit-system {
+    width: min(18.5rem, 88vw);
+    height: min(18.5rem, 88vw);
+  }
+
+  .hero-mini-card {
+    max-width: calc(100% - 1rem);
+    pointer-events: none;
+  }
+
+  .studyflow-system-demo {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  .studyflow-demo-nodes,
+  .studyflow-demo-results,
+  .studyflow-demo-node,
+  .studyflow-demo-result-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .studyflow-demo-node,
+  .studyflow-demo-result-card,
+  .experience-card,
+  .experience-card-heading,
+  .experience-card-heading > div,
+  .contact-info-card,
+  .contact-info-card > div {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .experience-timeline {
+    gap: 1rem;
+    margin-top: 2.25rem;
+  }
+
+  .experience-timeline::before {
+    top: 0.9rem;
+    bottom: 0.9rem;
+    left: 0.9rem;
+  }
+
+  .experience-entry {
+    padding-left: 2.45rem;
+  }
+
+  .experience-node {
+    top: 1.15rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .experience-card {
+    padding: 1.05rem;
+  }
+
+  .experience-card-heading {
+    gap: 0.7rem;
+  }
+
+  .experience-meta span,
+  .experience-tech span {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .contact-form,
+  .contact-field,
+  .contact-field input,
+  .contact-field textarea {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  header > div.md\:hidden {
+    max-height: calc(100dvh - 68px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-mini-card {
+    display: none;
+  }
+
+  .hero-orbit-wrap,
+  .hero-orbit-scene {
+    min-height: 20rem;
+  }
+
+  .studyflow-system-demo {
+    padding: 1rem;
+    border-radius: 1.25rem;
+  }
+
+  .studyflow-demo-flow {
+    padding-left: 0.9rem;
+  }
+
+  .studyflow-demo-line {
+    left: 1.05rem;
+  }
+
+  .studyflow-demo-node {
+    padding-right: 0.75rem;
+    padding-left: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

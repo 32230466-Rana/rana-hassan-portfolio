@@ -50,7 +50,7 @@ const avatarDots = [0, 72, 144, 216, 288];
 
 function About() {
   return (
-    <section id="about" className="relative scroll-mt-20 overflow-hidden py-24 sm:py-28">
+    <section id="about" className="relative scroll-mt-20 overflow-x-hidden py-24 sm:py-28">
       <div className="section-glow section-glow-about" />
       <div className="section-shell">
         <motion.div

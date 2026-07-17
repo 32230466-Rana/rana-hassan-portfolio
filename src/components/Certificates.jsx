@@ -23,7 +23,7 @@ const certificates = [
 
 function Certificates() {
   return (
-    <section id="certificates" className="relative scroll-mt-20 overflow-hidden bg-white py-24 sm:py-28">
+    <section id="certificates" className="relative scroll-mt-20 overflow-x-hidden bg-white py-24 sm:py-28">
       <div className="section-glow section-glow-project" />
       <div className="section-shell">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewportOnce}>

@@ -51,7 +51,7 @@ const highlights = [
 
 function ProfessionalHighlights() {
   return (
-    <section id="highlights" className="relative scroll-mt-20 overflow-hidden bg-white py-24 sm:py-28">
+    <section id="highlights" className="relative scroll-mt-20 overflow-x-hidden bg-white py-24 sm:py-28">
       <div className="section-glow section-glow-highlights" />
       <div className="section-shell">
         <motion.div

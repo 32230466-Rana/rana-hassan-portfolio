@@ -72,7 +72,7 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="experience-section relative scroll-mt-20 overflow-hidden py-24 sm:py-28"
+      className="experience-section relative scroll-mt-20 overflow-x-hidden py-24 sm:py-28"
     >
       <div className="section-glow experience-section-glow" />
       <div className="section-shell">

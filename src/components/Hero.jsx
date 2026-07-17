@@ -18,7 +18,7 @@ import {
   Wind,
   Zap,
 } from "lucide-react";
-import { AnimatePresence, animate, motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { AnimatePresence, animate, motion, useInView, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import {
   buttonHover,
   cardHover,
@@ -132,7 +132,7 @@ function TypingRole() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [visibleText, setVisibleText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const prefersReducedMotion = false;
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -181,7 +181,7 @@ function AnimatedCounter({ value, textValue }) {
   const isInView = useInView(counterRef, { amount: 0.65 });
   const counter = useMotionValue(0);
   const roundedCounter = useTransform(counter, (latest) => Math.round(latest));
-  const prefersReducedMotion = false;
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     if (textValue) return undefined;
@@ -221,7 +221,7 @@ function AnimatedCounter({ value, textValue }) {
 }
 
 function HeroVisual() {
-  const prefersReducedMotion = false;
+  const prefersReducedMotion = useReducedMotion();
   const tiltX = useMotionValue(0);
   const tiltY = useMotionValue(0);
   const smoothTiltX = useSpring(tiltX, { stiffness: 140, damping: 20, mass: 0.55 });
@@ -363,7 +363,7 @@ function HeroExtras() {
         </div>
       </motion.div>
 
-      <motion.a href="#project" className="scroll-cue" variants={fadeUp}>
+      <motion.a href="#about" className="scroll-cue" variants={fadeUp}>
         <motion.span
           className="scroll-arrow"
           animate={{ y: [0, 5, 0] }}

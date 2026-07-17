@@ -106,7 +106,7 @@ const skillGroups = [
 ];
 function Skills() {
   return (
-    <section id="skills" className="relative scroll-mt-20 overflow-hidden bg-ink py-24 text-white sm:py-28">
+    <section id="skills" className="relative scroll-mt-20 overflow-x-hidden bg-ink py-24 text-white sm:py-28">
       <div className="dark-section-glow dark-section-glow-one" />
       <div className="dark-section-glow dark-section-glow-two" />
       <div className="section-shell">

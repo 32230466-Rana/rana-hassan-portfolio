@@ -45,7 +45,7 @@ function Education() {
   return (
     <section
       id="education"
-      className="experience-section education-section relative scroll-mt-20 overflow-hidden py-24 sm:py-28"
+      className="experience-section education-section relative scroll-mt-20 overflow-x-hidden py-24 sm:py-28"
     >
       <div className="section-glow experience-section-glow education-section-glow" />
       <div className="section-shell">
