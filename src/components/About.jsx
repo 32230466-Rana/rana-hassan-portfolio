@@ -134,11 +134,14 @@ function About() {
             </motion.div>
 
             <motion.div className="about-philosophy-grid" variants={staggerContainer}>
-              {features.map(({ label, description, icon: Icon }) => (
+              {features.map(({ label, description, icon: Icon }, index) => (
                 <motion.div
                   key={label}
                   className="about-philosophy-card premium-card"
-                  variants={fadeUp}
+                  variants={index % 2 === 0 ? slideLeft : slideRight}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ ...viewportOnce, amount: 0.18 }}
                   whileHover={cardHover}
                 >
                   <span>

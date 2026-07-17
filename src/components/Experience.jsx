@@ -104,6 +104,9 @@ function Experience() {
                 index % 2 === 0 ? "experience-entry-left" : "experience-entry-right"
               }`}
               variants={index % 2 === 0 ? slideLeft : slideRight}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ ...viewportOnce, amount: 0.18 }}
             >
               <span className="experience-node" aria-hidden="true">
                 <BriefcaseBusiness size={16} />

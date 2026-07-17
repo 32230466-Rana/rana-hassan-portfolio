@@ -47,6 +47,9 @@ function Certificates() {
               key={`${certificate.title}-${certificate.date}`}
               className="premium-card rounded-3xl border border-line bg-surface p-6 shadow-card"
               variants={index % 2 === 0 ? slideLeft : slideRight}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ ...viewportOnce, amount: 0.18 }}
               whileHover={cardHover}
             >
               <span className="grid size-12 place-items-center rounded-2xl bg-brand-soft text-brand shadow-sm">

@@ -530,11 +530,14 @@ function StudyFlow() {
             whileInView="show"
             viewport={viewportOnce}
           >
-            {studyFlowScreens.map((screen) => (
+            {studyFlowScreens.map((screen, index) => (
               <motion.article
                 key={screen.title}
                 className="premium-card group overflow-hidden rounded-2xl border border-line bg-surface"
-                variants={fadeUp}
+                variants={index % 2 === 0 ? slideLeft : slideRight}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ ...viewportOnce, amount: 0.18 }}
                 whileHover={cardHover}
               >
                 <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-gradient-to-br from-indigo-50 to-purple-50 p-3">

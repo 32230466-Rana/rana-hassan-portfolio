@@ -210,7 +210,7 @@ function Contact() {
             </p>
 
             <motion.div className="contact-info-grid" variants={staggerContainer}>
-              {contactLinks.map(({ label, value, href, icon: Icon, external }) => {
+              {contactLinks.map(({ label, value, href, icon: Icon, external }, index) => {
                 const Card = href ? motion.a : motion.div;
 
                 return (
@@ -220,7 +220,10 @@ function Contact() {
                     target={external ? "_blank" : undefined}
                     rel={external ? "noreferrer" : undefined}
                     className="contact-info-card premium-card"
-                    variants={fadeUp}
+                    variants={index % 2 === 0 ? slideLeft : slideRight}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ ...viewportOnce, amount: 0.18 }}
                     whileHover={cardHover}
                   >
                     <span className="contact-info-icon">

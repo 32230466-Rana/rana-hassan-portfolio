@@ -138,6 +138,9 @@ function Skills() {
                 key={title}
                 className="skill-progress-card premium-card-dark"
                 variants={index % 2 === 0 ? slideLeft : slideRight}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ ...viewportOnce, amount: 0.18 }}
                 whileHover={darkCardHover}
               >
                 <div className="skill-progress-header">

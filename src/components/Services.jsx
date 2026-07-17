@@ -82,6 +82,9 @@ function Services() {
               key={title}
               className="premium-card group rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-7"
               variants={index % 2 === 0 ? slideLeft : slideRight}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ ...viewportOnce, amount: 0.18 }}
               whileHover={cardHover}
             >
               <div className="flex items-start justify-between">
