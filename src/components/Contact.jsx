@@ -132,11 +132,26 @@ function Contact() {
     setIsSending(true);
     setStatus(null);
 
+    const trimmedForm = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      subject: form.subject.trim(),
+      message: form.message.trim(),
+    };
+    const submittedAt = new Date().toLocaleString("en-GB", {
+      dateStyle: "full",
+      timeStyle: "long",
+      timeZone: "Asia/Beirut",
+    });
+
     const payload = new FormData();
-    payload.append("name", form.name.trim());
-    payload.append("email", form.email.trim());
-    payload.append("subject", form.subject.trim());
-    payload.append("message", form.message.trim());
+    payload.append("name", trimmedForm.name);
+    // Formspree uses `email` as the Reply-To address for owner notifications.
+    payload.append("email", trimmedForm.email);
+    payload.append("subject", trimmedForm.subject);
+    payload.append("message", trimmedForm.message);
+    payload.append("submitted_at", submittedAt);
+    payload.append("_subject", `Portfolio contact: ${trimmedForm.subject}`);
     payload.append("_gotcha", form._gotcha.trim());
 
     try {
@@ -161,7 +176,8 @@ function Contact() {
         });
         setStatus({
           type: "error",
-          message: "Something went wrong. Please try again or contact me by email.",
+          message:
+            "Your message could not be sent. Please try again or contact me directly by email.",
         });
         return;
       }
@@ -171,13 +187,14 @@ function Contact() {
       setStatus({
         type: "success",
         message:
-          "Thank you! Your message has been sent successfully. I will get back to you soon.",
+          "Your message has been sent successfully. Thank you for contacting me. I will respond as soon as possible.",
       });
     } catch (error) {
       console.error("Formspree network request failed.", error);
       setStatus({
         type: "error",
-        message: "Something went wrong. Please try again or contact me by email.",
+        message:
+            "Your message could not be sent. Please try again or contact me directly by email.",
       });
     } finally {
       submissionLock.current = false;
