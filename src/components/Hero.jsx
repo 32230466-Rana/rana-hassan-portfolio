@@ -132,14 +132,8 @@ function TypingRole() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [visibleText, setVisibleText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) {
-      setVisibleText(typingRoles[0]);
-      return undefined;
-    }
-
     const currentRole = typingRoles[roleIndex];
     const isComplete = !isDeleting && visibleText === currentRole;
     const isEmpty = isDeleting && visibleText === "";
@@ -166,7 +160,7 @@ function TypingRole() {
     );
 
     return () => window.clearTimeout(timeout);
-  }, [isDeleting, prefersReducedMotion, roleIndex, visibleText]);
+  }, [isDeleting, roleIndex, visibleText]);
 
   return (
     <span className="typing-pill">
