@@ -19,7 +19,7 @@ const experiences = [
   {
     role: "Frontend Developer Intern",
     company: "Techryt",
-    location: "Remote",
+    location: "Remote (United States)",
     dates: "Aug 2025 - Dec 2025",
     bullets: [
       "Developed responsive websites and reusable interfaces using React, Next.js, CSS, and Tailwind CSS.",
@@ -31,7 +31,7 @@ const experiences = [
   {
     role: "Full-Stack Developer Intern",
     company: "Prodigy InfoTech",
-    location: "Remote",
+    location: "Remote (India)",
     dates: "Sep 2024",
     bullets: [
       "Developed MERN-stack web applications with MongoDB, Express.js, React, and Node.js.",

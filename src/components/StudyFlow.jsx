@@ -11,7 +11,6 @@ import {
   LayoutDashboard,
   Lightbulb,
   Play,
-  LockKeyhole,
   Network,
   Server,
   ShoppingBag,
@@ -38,42 +37,17 @@ import {
 } from "../lib/animations";
 
 const features = [
-  { label: "Authentication", icon: LockKeyhole },
-  { label: "File upload", icon: Upload },
-  { label: "Laravel APIs", icon: Network },
-  { label: "MySQL database features", icon: Database },
-  { label: "React frontend pages", icon: LayoutDashboard },
-  { label: "Admin/student dashboards", icon: LayoutDashboard },
-  { label: "Saved summaries", icon: Sparkles },
-  { label: "Saved chats", icon: BrainCircuit },
-  { label: "AI summary generation", icon: Sparkles },
-  { label: "Quiz generation", icon: FileQuestion },
-  { label: "Ask-PDF chat", icon: BrainCircuit },
+  { label: "AI summaries", icon: Sparkles },
+  { label: "AI quizzes", icon: FileQuestion },
+  { label: "Ask-PDF", icon: BrainCircuit },
+  { label: "Weak-topic tracking", icon: Activity },
   { label: "Recommendations", icon: Lightbulb },
-  { label: "Postman Testing", icon: CheckCircle2 },
-  { label: "API Testing", icon: CheckCircle2 },
-  { label: "UI Testing", icon: Activity },
-  { label: "Form Validation", icon: CheckCircle2 },
-  { label: "Loading States", icon: Activity },
-  { label: "Error Handling", icon: CheckCircle2 },
+  { label: "Saved summaries & chats", icon: FileText },
+  { label: "Admin dashboard", icon: LayoutDashboard },
+  { label: "AI integration", icon: Network },
 ];
 
-const technologies = [
-  "React",
-  "Laravel",
-  "MySQL",
-  "FastAPI",
-  "Python",
-  "Ollama/local LLMs",
-  "REST APIs",
-  "Tailwind CSS",
-  "Postman Testing",
-  "API Testing",
-  "UI Testing",
-  "Form Validation",
-  "Loading States",
-  "Error Handling",
-];
+const technologies = ["React", "Laravel", "FastAPI", "MySQL", "AI Integration"];
 
 const studyFlowScreens = [
   {
@@ -437,7 +411,7 @@ function StudyFlow() {
               StudyFlow
             </h3>
             <p className="mt-5 leading-7 text-muted">
-              StudyFlow is a full-stack AI-powered learning platform built with React, Laravel, MySQL, and FastAPI. It helps students upload study materials, generate summaries, create quizzes, ask questions from PDFs, track weak topics, and receive personalized study recommendations.
+              StudyFlow is a full-stack AI learning platform built with React, Laravel, FastAPI, MySQL, and AI integration. It provides AI summaries, AI quizzes, Ask-PDF, weak-topic tracking, recommendations, saved summaries and chats, and an admin dashboard.
             </p>
 
             <motion.div
@@ -617,6 +591,50 @@ function StudyFlow() {
                   ))}
                 </div>
               </div>
+            </motion.div>
+          </div>
+        </motion.article>
+        <motion.article
+          className="project-main-card premium-card mt-16 overflow-hidden rounded-[28px] border border-line bg-surface p-5 shadow-card sm:p-7 lg:p-8"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          whileHover={cardHover}
+        >
+          <div className="grid items-center gap-8 lg:grid-cols-[0.86fr_1.14fr]">
+            <motion.div variants={slideLeft} initial="hidden" whileInView="show" viewport={viewportOnce}>
+              <span className="grid size-20 place-items-center rounded-3xl bg-brand-soft text-brand shadow-sm">
+                <Github size={34} />
+              </span>
+            </motion.div>
+            <motion.div variants={slideRight} initial="hidden" whileInView="show" viewport={viewportOnce}>
+              <span className="section-badge-lite text-xs font-bold tracking-[0.2em] text-brand uppercase">
+                Third project
+              </span>
+              <h3 className="font-display mt-5 text-2xl font-extrabold tracking-[-0.04em] text-ink sm:text-3xl">
+                Developer Portfolio
+              </h3>
+              <p className="mt-4 leading-7 text-muted">
+                A responsive developer portfolio presenting projects, skills, experience, certificates, services, and contact information with reliable form states and production deployment.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["React", "TypeScript", "Vite", "GitHub Actions", "Vercel"].map((technology) => (
+                  <span key={technology} className="rounded-lg bg-white px-3 py-1.5 text-xs font-bold text-brand-dark shadow-sm ring-1 ring-indigo-100">
+                    {technology}
+                  </span>
+                ))}
+              </div>
+              <motion.a
+                href="https://github.com/32230466-Rana/rana-hassan-portfolio"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-brand"
+                whileHover={buttonHover}
+              >
+                View on GitHub
+                <ArrowUpRight size={15} />
+              </motion.a>
             </motion.div>
           </div>
         </motion.article>

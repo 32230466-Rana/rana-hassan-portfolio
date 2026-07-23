@@ -16,9 +16,7 @@ const skillGroups = [
     icon: Layers3,
     skills: [
       "React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS",
-      "Bootstrap", "Sass", "Responsive Design", "UI/UX Implementation", "Animations",
-      "Mobile-First Responsive UI", "Responsive Web Apps", "Cross-Screen Testing",
-      "React Native fundamentals", "Flutter fundamentals", "Mobile Application Development",
+      "Bootstrap", "Sass", "Responsive Design", "UI Implementation", "Animations", "TanStack Query",
     ],
   },
   {
@@ -27,20 +25,19 @@ const skillGroups = [
     skills: [
       "Laravel", "Node.js", "Express.js", "FastAPI", "REST APIs", "Authentication",
       "Laravel Sanctum", "Role-Based Access", "Validation", "PHP", "Python", "Java",
-      "API Integration", "CRUD Operations",
     ],
   },
   {
     title: "Databases",
     icon: Database,
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "SQL", "Relational Data", "Dashboard Data", "Database Design"],
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "SQL", "Database Design", "CRUD", "Queries", "Joins"],
   },
   {
     title: "Testing & Quality",
     icon: Wrench,
     skills: [
       "Postman", "API Testing", "UI Testing", "Debugging", "Cross-Browser Testing",
-      "Form Validation", "Error Handling", "User Flow Testing",
+      "Form Validation", "Error Handling",
     ],
   },
   {
@@ -49,14 +46,16 @@ const skillGroups = [
     skills: [
       "Ollama", "Local LLMs", "AI Integration", "Ask-PDF", "AI Summarization",
       "Quiz Generation", "Knowledge Graphs", "AI Agents", "n8n", "LangGraph",
-      "Artificial Intelligence", "Machine Learning", "Natural Language Processing", "Local AI",
-      "FastAPI AI Services", "AI API Integration", "PDF-based AI Features", "Data Analytics",
+      "Machine Learning", "Natural Language Processing",
     ],
   },
   {
     title: "Tools & Deployment",
     icon: Rocket,
-    skills: ["Git", "GitHub", "GitHub Actions", "Vercel", "Docker", "Jira", "Agile/Scrum", "Figma", "VS Code"],
+    skills: [
+      "Git", "GitHub", "GitHub Actions", "Vercel", "Docker", "Jira", "Agile/Scrum",
+      "Figma", "CI/CD Fundamentals", "VS Code",
+    ],
   },
 ];
 

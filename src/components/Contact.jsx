@@ -146,7 +146,7 @@ function Contact() {
       setStatus({
         type: "success",
         message:
-          "Thank you! Your message has been sent successfully. I will review it and get back to you as soon as possible.",
+          "Thank you! Your message has been received successfully. I will review it and get back to you within 24 hours.",
       });
     } catch (error) {
       console.error("Contact API request failed.", error);
@@ -182,7 +182,7 @@ function Contact() {
               Get In Touch
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-muted sm:text-lg">
-              I am open to Junior Frontend Developer, Full-Stack Developer, Website Developer, and AI-powered Web Platform opportunities in Lebanon or remotely. I am also available for freelance projects and professional collaborations.
+              I am open to Website Developer, Full-Stack Developer, Frontend Developer, and AI-powered web platform opportunities. Feel free to contact me for junior roles, freelance projects, or collaboration opportunities.
             </p>
 
             <motion.div className="contact-info-grid" variants={staggerContainer}>

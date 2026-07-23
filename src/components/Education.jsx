@@ -22,8 +22,8 @@ const educationItems = [
     location: "Saida, Lebanon",
     dates: "Oct 2022 - Jun 2026",
     description:
-      "Relevant coursework: Machine Learning, Natural Language Processing, Web Development, Mobile Application Development, Data Structures, Information Systems Development, Cryptography.",
-    technologies: ["Computer Science", "Machine Learning", "NLP", "Cryptography", "Web Development", "Mobile Application Development", "Data Structures", "Information Systems"],
+      "Relevant coursework: Machine Learning, Natural Language Processing, Web Development, Mobile Application Development, Data Structures, Information Systems Development.",
+    technologies: ["Computer Science", "Machine Learning", "NLP", "Web Development", "Mobile Application Development", "Data Structures", "Information Systems"],
   },
   {
     title: "Full-Stack Web Development Training",
@@ -31,13 +31,12 @@ const educationItems = [
     location: "Saida, Lebanon",
     dates: "Jul 2024 - Dec 2024",
     bullets: [
-      "Built and practiced full-stack web applications using React, Laravel, PHP, Node.js, Express.js, and database-driven workflows.",
-      "Designed REST API endpoints and connected frontend pages with backend logic.",
-      "Developed dashboards and informative web pages for business and multi-role use cases.",
-      "Practiced responsive UI implementation, reusable components, forms, and user-friendly layouts.",
-      "Tested forms, API requests, and user flows using practical debugging and testing workflows.",
+      "Built and deployed full-stack web applications using MERN and Next.js technologies.",
+      "Designed RESTful APIs using Express.js and Next.js for backend functionality and integration.",
+      "Developed dashboards and informative web solutions for fintech and multi-role use cases.",
+      "Applied responsive UI/UX practices, structured code organization, and SOLID principles.",
     ],
-    technologies: ["React", "Laravel", "PHP", "Node.js", "Express.js", "MySQL", "MongoDB", "REST APIs", "API Integration", "API Testing", "Responsive UI"],
+    technologies: ["MERN", "Next.js", "Express.js", "REST APIs", "Responsive UI/UX", "SOLID Principles"],
   },
 ];
 
