@@ -9,7 +9,12 @@ function AnimatedBackground() {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    if (prefersReducedMotion) return undefined;
+    if (
+      prefersReducedMotion ||
+      !window.matchMedia("(pointer: fine)").matches
+    ) {
+      return undefined;
+    }
 
     const handlePointerMove = (event) => {
       setPointer({

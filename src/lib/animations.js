@@ -2,17 +2,16 @@ const easeOut = [0.16, 1, 0.3, 1];
 const softSpring = { type: "spring", stiffness: 120, damping: 18, mass: 0.7 };
 
 export const viewportOnce = {
-  once: false,
+  once: true,
   amount: 0.18,
   margin: "-40px 0px -40px 0px",
 };
 
 export const fadeUp = {
-  hidden: { opacity: 0, y: 42, filter: "blur(4px)" },
+  hidden: { opacity: 0, y: 42 },
   show: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.78, ease: easeOut },
   },
 };
@@ -26,21 +25,19 @@ export const fadeIn = {
 };
 
 export const slideLeft = {
-  hidden: { opacity: 0, x: -72, filter: "blur(5px)" },
+  hidden: { opacity: 0, x: -72 },
   show: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.84, ease: easeOut },
   },
 };
 
 export const slideRight = {
-  hidden: { opacity: 0, x: 72, filter: "blur(5px)" },
+  hidden: { opacity: 0, x: 72 },
   show: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.84, ease: easeOut },
   },
 };
