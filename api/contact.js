@@ -1,4 +1,4 @@
-/* global process */
+﻿/* global process */
 const attempts = new Map();
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const clean = (value) => typeof value === "string" ? value.trim() : "";
@@ -46,23 +46,17 @@ export default async function handler(request, response) {
   }
 
   const safe = { name: escapeHtml(values.name), email: escapeHtml(values.email), subject: escapeHtml(values.subject), message: escapeHtml(values.message).replaceAll("\n", "<br>") };
-  const emails = [
-    {
-      from, to: [receiver], reply_to: values.email,
-      subject: `New Portfolio Message from ${values.name}`,
-      html: `<h2>New portfolio message</h2><p><strong>Name:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>Subject:</strong> ${safe.subject}</p><p><strong>Message:</strong><br>${safe.message}</p><p><strong>Submitted:</strong> ${escapeHtml(new Date().toISOString())}</p>`,
-    },
-    {
-      from, to: [values.email], reply_to: receiver,
-      subject: "We received your message – Rana Hassan",
-      html: `<p>Hello ${safe.name},</p><p>Thank you for contacting me.</p><p>I have successfully received your message and will review it as soon as possible. I will get back to you at the earliest opportunity.</p><p>Best regards,<br>Rana Hassan<br>Full-Stack Developer | AI &amp; Digital Innovation<br>Portfolio: <a href="https://rana-hassan-portfolio-hdsn.vercel.app/">rana-hassan-portfolio-hdsn.vercel.app</a></p>`,
-    },
-  ];
-
+  const email = {
+    from,
+    to: [receiver],
+    reply_to: values.email,
+    subject: `New Portfolio Message from ${values.name}`,
+    html: `<h2>New portfolio message</h2><p><strong>Name:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>Subject:</strong> ${safe.subject}</p><p><strong>Message:</strong><br>${safe.message}</p><p><strong>Submitted:</strong> ${escapeHtml(new Date().toISOString())}</p>`,
+  };
   try {
-    const sent = await fetch("https://api.resend.com/emails/batch", { method: "POST", headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" }, body: JSON.stringify(emails) });
+    const sent = await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" }, body: JSON.stringify(email) });
     if (!sent.ok) {
-      console.error("Resend batch failed.", sent.status, (await sent.text()).slice(0, 500));
+      console.error("Resend email failed.", sent.status, (await sent.text()).slice(0, 500));
       return response.status(502).json({ error: "Email delivery failed. Please try again." });
     }
     return response.status(200).json({ ok: true });

@@ -146,7 +146,7 @@ function Contact() {
       setStatus({
         type: "success",
         message:
-          "Thank you! Your message has been sent successfully. A confirmation email has been sent to your email address, and I will get back to you as soon as possible.",
+          "Thank you! Your message has been sent successfully. I will review it and get back to you as soon as possible.",
       });
     } catch (error) {
       console.error("Contact API request failed.", error);
