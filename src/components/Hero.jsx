@@ -430,7 +430,7 @@ function Hero() {
               </motion.div>
 
               <motion.p variants={fadeUp} className="mb-4 font-display text-lg font-bold text-brand sm:text-xl">
-                Full-Stack Developer | AI-Powered Web Platforms
+                Full-Stack Developer | AI &amp; Digital Innovation
               </motion.p>
               <motion.h2
                 variants={staggerContainer}

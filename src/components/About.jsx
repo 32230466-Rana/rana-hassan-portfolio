@@ -84,7 +84,7 @@ function About() {
                 <h3 className="font-display text-3xl font-extrabold tracking-[-0.04em] text-ink">
                   Rana Hassan
                 </h3>
-                <p className="mt-2 text-sm font-bold text-muted">Full-Stack Developer | AI-Powered Web Platforms</p>
+                <p className="mt-2 text-sm font-bold text-muted">Full-Stack Developer | AI &amp; Digital Innovation</p>
               </div>
 
               <div className="mt-8 grid gap-3">
@@ -119,7 +119,7 @@ function About() {
 
             <motion.div className="about-summary-copy" variants={staggerContainer}>
               <motion.p variants={fadeUp}>
-                Full-Stack Developer focused on building practical full-stack platforms, dashboards, e-commerce workflows, REST API integrations, and AI-powered web features. Skilled in React, Next.js, JavaScript, Laravel, Node.js, Express.js, FastAPI, Python, MySQL, MongoDB, REST APIs, API integration, Postman testing, and UI/API testing.
+                Computer Science graduate and Full-Stack Developer with hands-on experience building responsive web applications, AI-powered platforms, dashboards, and REST APIs. Skilled in React, Next.js, TypeScript, Laravel, Node.js, FastAPI, MySQL, MongoDB, API integration, testing, and deployment. Experienced in authentication, AI service integration, validation, and user-focused full-stack development.
               </motion.p>
               <motion.p variants={fadeUp}>
                 I developed StudyFlow, a full-stack AI learning platform that helps students upload

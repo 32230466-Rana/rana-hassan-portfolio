@@ -103,31 +103,6 @@ function Contact() {
       return;
     }
 
-    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim() || "https://formspree.io/f/xqevzdnb";
-    if (!endpoint || endpoint.includes("YOUR_FORM_ID")) {
-      setStatus({
-        type: "error",
-        message:
-          "Formspree endpoint is missing. Please add VITE_FORMSPREE_ENDPOINT to .env.local and restart the dev server.",
-      });
-      return;
-    }
-
-    try {
-      const endpointUrl = new URL(endpoint);
-      if (endpointUrl.protocol !== "https:" || endpointUrl.hostname !== "formspree.io") {
-        throw new Error("Unexpected Formspree endpoint.");
-      }
-    } catch (error) {
-      console.error("Invalid Formspree endpoint configuration.", error);
-      setStatus({
-        type: "error",
-        message:
-          "Formspree endpoint is missing. Please add VITE_FORMSPREE_ENDPOINT to .env.local and restart the dev server.",
-      });
-      return;
-    }
-
     submissionLock.current = true;
     setIsSending(true);
     setStatus(null);
@@ -138,27 +113,11 @@ function Contact() {
       subject: form.subject.trim(),
       message: form.message.trim(),
     };
-    const submittedAt = new Date().toLocaleString("en-GB", {
-      dateStyle: "full",
-      timeStyle: "long",
-      timeZone: "Asia/Beirut",
-    });
-
-    const payload = new FormData();
-    payload.append("name", trimmedForm.name);
-    // Formspree uses `email` as the Reply-To address for owner notifications.
-    payload.append("email", trimmedForm.email);
-    payload.append("subject", trimmedForm.subject);
-    payload.append("message", trimmedForm.message);
-    payload.append("submitted_at", submittedAt);
-    payload.append("_subject", `Portfolio contact: ${trimmedForm.subject}`);
-    payload.append("_gotcha", form._gotcha.trim());
-
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: payload,
-        headers: { Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...trimmedForm, website: form._gotcha.trim() }),
       });
 
       if (!response.ok) {
@@ -167,10 +126,10 @@ function Contact() {
         try {
           responseDetails = await response.text();
         } catch (readError) {
-          console.error("Unable to read the Formspree error response.", readError);
+          console.error("Unable to read the contact API error response.", readError);
         }
 
-        console.error("Formspree submission failed.", {
+        console.error("Contact submission failed.", {
           status: response.status,
           response: responseDetails.slice(0, 500),
         });
@@ -187,10 +146,10 @@ function Contact() {
       setStatus({
         type: "success",
         message:
-          "Your message has been sent successfully. Thank you for contacting me. I will respond as soon as possible.",
+          "Thank you! Your message has been sent successfully. A confirmation email has been sent to your email address, and I will get back to you as soon as possible.",
       });
     } catch (error) {
-      console.error("Formspree network request failed.", error);
+      console.error("Contact API request failed.", error);
       setStatus({
         type: "error",
         message:
@@ -223,7 +182,7 @@ function Contact() {
               Get In Touch
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-muted sm:text-lg">
-              I am open to Website Developer, Full-Stack Developer, Frontend Developer, and AI-powered web platform opportunities. Feel free to contact me for junior roles, freelance projects, or collaboration opportunities.
+              I am open to Junior Frontend Developer, Full-Stack Developer, Website Developer, and AI-powered Web Platform opportunities in Lebanon or remotely. I am also available for freelance projects and professional collaborations.
             </p>
 
             <motion.div className="contact-info-grid" variants={staggerContainer}>
@@ -286,6 +245,8 @@ function Contact() {
                   aria-invalid={Boolean(errors.name)}
                   aria-describedby={errors.name ? "contact-name-error" : undefined}
                   autoComplete="name"
+                  minLength={2}
+                  maxLength={80}
                   required
                 />
                 {errors.name && (
@@ -307,6 +268,7 @@ function Contact() {
                   aria-invalid={Boolean(errors.email)}
                   aria-describedby={errors.email ? "contact-email-error" : undefined}
                   autoComplete="email"
+                  maxLength={254}
                   required
                 />
                 {errors.email && (
@@ -327,6 +289,7 @@ function Contact() {
                   onChange={handleChange}
                   aria-invalid={Boolean(errors.subject)}
                   aria-describedby={errors.subject ? "contact-subject-error" : undefined}
+                  maxLength={160}
                   required
                 />
                 {errors.subject && (
@@ -347,7 +310,8 @@ function Contact() {
                   onChange={handleChange}
                   aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? "contact-message-error" : undefined}
-                  minLength="10"
+                  minLength={10}
+                  maxLength={5000}
                   required
                 />
                 {errors.message && (
