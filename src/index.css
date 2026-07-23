@@ -1440,12 +1440,6 @@ a {
     backdrop-filter: none;
   }
 
-  .hero-drift-badge:nth-child(n + 5),
-  .orbit-badge-shell:nth-of-type(n + 10),
-  .floating-tech:nth-child(n + 3) {
-    display: none;
-  }
-
   .hero-shell {
     padding: 2rem 0 1.15rem;
   }
