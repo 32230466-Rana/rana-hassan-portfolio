@@ -30,7 +30,7 @@ function App() {
   }, [prefersReducedMotion]);
 
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion="never">
       <AnimatePresence mode="wait">{loading && <Preloader />}</AnimatePresence>
       {!loading && (
         <motion.div
