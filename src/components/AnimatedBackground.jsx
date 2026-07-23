@@ -18,8 +18,8 @@ function AnimatedBackground() {
       });
     };
 
-    window.addEventListener("mousemove", handlePointerMove);
-    return () => window.removeEventListener("mousemove", handlePointerMove);
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    return () => window.removeEventListener("pointermove", handlePointerMove);
   }, [prefersReducedMotion]);
 
   return (
