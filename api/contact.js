@@ -38,9 +38,9 @@ export default async function handler(request, response) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const receiver = process.env.CONTACT_RECEIVER_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL;
-  if (!apiKey || !receiver || !from) {
+  const receiver = process.env.CONTACT_RECEIVER_EMAIL || "ranaaa.hasan236@gmail.com";
+  const from = process.env.CONTACT_FROM_EMAIL || "Rana Hassan <onboarding@resend.dev>";
+  if (!apiKey) {
     console.error("Contact email environment variables are incomplete.");
     return response.status(503).json({ error: "Email service is temporarily unavailable." });
   }
