@@ -1,4 +1,4 @@
-import { BrainCircuit, Braces, Code2, Database, Layers3, MonitorSmartphone, Wrench } from "lucide-react";
+import { BrainCircuit, Code2, Database, Layers3, Rocket, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import {
@@ -12,98 +12,54 @@ import {
 
 const skillGroups = [
   {
-    title: "Programming Languages",
-    icon: Braces,
-    skills: ["JavaScript", "Python", "Java", "PHP"],
-  },
-  {
     title: "Frontend",
     icon: Layers3,
     skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "Bootstrap",
-      "Sass",
-      "Responsive Design",
-      "UI/UX Implementation",
-      "Animations",
+      "React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS",
+      "Bootstrap", "Sass", "Responsive Design", "UI/UX Implementation", "Animations",
+      "Mobile-First Responsive UI", "Responsive Web Apps", "Cross-Screen Testing",
+      "React Native fundamentals", "Flutter fundamentals", "Mobile Application Development",
     ],
   },
   {
-    title: "Backend",
+    title: "Backend & APIs",
     icon: Code2,
     skills: [
-      "Laravel",
-      "PHP",
-      "FastAPI",
-      "Node.js",
-      "Express.js",
-      "REST APIs",
-      "API Integration",
-      "Authentication",
-      "CRUD Operations",
+      "Laravel", "Node.js", "Express.js", "FastAPI", "REST APIs", "Authentication",
+      "Laravel Sanctum", "Role-Based Access", "Validation", "PHP", "Python", "Java",
+      "API Integration", "CRUD Operations",
     ],
   },
   {
-    title: "Database",
+    title: "Databases",
     icon: Database,
-    skills: ["MySQL", "MongoDB", "SQL", "Relational Data", "Dashboard Data", "Database Design"],
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "SQL", "Relational Data", "Dashboard Data", "Database Design"],
   },
   {
-    title: "AI / Innovation",
-    icon: BrainCircuit,
-    skills: [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Natural Language Processing",
-      "Local AI",
-      "Ollama/local LLMs",
-      "FastAPI AI Services",
-      "AI API Integration",
-      "PDF-based AI Features",
-      "Knowledge Graphs",
-      "AI Agents",
-      "Data Analytics",
-    ],
-  },
-  {
-    title: "Testing & Tools",
+    title: "Testing & Quality",
     icon: Wrench,
     skills: [
-      "Postman Testing",
-      "API Testing",
-      "UI Testing",
-      "Jest",
-      "React Testing Library",
-      "Cypress",
-      "Debugging",
-      "Cross-Browser Testing",
-      "Form Validation Testing",
-      "User Flow Testing",
-      "Git",
-      "GitHub",
-      "Jira",
-      "VS Code",
-      "Figma",
+      "Postman", "API Testing", "UI Testing", "Debugging", "Cross-Browser Testing",
+      "Form Validation", "Error Handling", "User Flow Testing",
     ],
   },
   {
-    title: "Mobile & Responsive",
-    icon: MonitorSmartphone,
+    title: "AI & Automation",
+    icon: BrainCircuit,
     skills: [
-      "Mobile Application Development",
-      "React Native fundamentals",
-      "Flutter fundamentals",
-      "Mobile-First Responsive UI",
-      "Responsive Web Apps",
-      "Cross-Screen Testing",
+      "Ollama", "Local LLMs", "AI Integration", "Ask-PDF", "AI Summarization",
+      "Quiz Generation", "Knowledge Graphs", "AI Agents", "n8n", "LangGraph",
+      "Artificial Intelligence", "Machine Learning", "Natural Language Processing", "Local AI",
+      "FastAPI AI Services", "AI API Integration", "PDF-based AI Features", "Data Analytics",
     ],
   },
+  {
+    title: "Tools & Deployment",
+    icon: Rocket,
+    skills: ["Git", "GitHub", "GitHub Actions", "Vercel", "Docker", "Jira", "Agile/Scrum", "Figma", "VS Code"],
+  },
 ];
+
 function Skills() {
   return (
     <section id="skills" className="skills-light-section relative scroll-mt-20 overflow-x-hidden bg-white py-24 text-ink sm:py-28">

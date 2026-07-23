@@ -19,15 +19,26 @@ const experiences = [
   {
     role: "Frontend Developer Intern",
     company: "Techryt",
-    location: "Remote, United States",
+    location: "Remote",
     dates: "Aug 2025 - Dec 2025",
     bullets: [
-      "Developed responsive websites and interactive user interfaces using React, Next.js, CSS, and Tailwind CSS, focusing on clean design, modern layouts, and smooth user experience.",
-      "Built reusable frontend components, modern layouts, animations, and user-friendly browser-based experiences.",
-      "Tested and debugged user-facing interfaces, forms, UI behavior, and responsive layouts across different screen sizes.",
-      "Used Git/GitHub, Agile workflow, and code reviews to collaborate on frontend tasks.",
+      "Developed responsive websites and reusable interfaces using React, Next.js, CSS, and Tailwind CSS.",
+      "Implemented modern layouts, animations, and accessible, user-friendly browser experiences.",
+      "Tested and debugged forms, UI behavior, and responsive layouts across screen sizes.",
     ],
     technologies: ["React", "Next.js", "Tailwind CSS", "CSS", "Git", "GitHub"],
+  },
+  {
+    role: "Full-Stack Developer Intern",
+    company: "Prodigy InfoTech",
+    location: "Remote",
+    dates: "Sep 2024",
+    bullets: [
+      "Developed MERN-stack web applications with MongoDB, Express.js, React, and Node.js.",
+      "Integrated responsive frontend interfaces with REST APIs and backend logic.",
+      "Tested UI flows, forms, API integrations, and endpoints using Postman.",
+    ],
+    technologies: ["MongoDB", "Express.js", "React", "Node.js", "CSS"],
   },
   {
     role: "Freelance / Independent Full-Stack Web Developer",
@@ -35,36 +46,23 @@ const experiences = [
     location: "Remote",
     dates: "Dec 2024 - Jun 2026",
     bullets: [
-      "Independently developed full-stack web applications, e-commerce websites, learning platforms, dashboards, and user-focused digital systems.",
-      "Implemented responsive frontend interfaces, authentication, CRUD workflows, REST APIs, backend integration, and database-driven features.",
-      "Built product browsing, file upload, saved data, dynamic content, forms, reports, and admin/student-style dashboards.",
-      "Worked with structured database workflows including MySQL-backed features, database tables, relationships, and stored user/application data.",
-      "Tested APIs and user flows with Postman and UI/API testing.",
+      "Developed full-stack web applications, e-commerce websites, learning platforms, and dashboards.",
+      "Implemented responsive interfaces, authentication, CRUD workflows, REST APIs, and database features.",
+      "Tested APIs and user flows with Postman, UI testing, and cross-browser checks.",
     ],
     technologies: ["Laravel", "React", "MySQL", "Database Features", "REST APIs", "Authentication", "CRUD", "Full-Stack"],
-  },  {
+  },
+  {
     role: "AI Summer Sprint Bootcamp",
     company: "Near East University & SprintOS",
     location: "Remote",
     dates: "Jul 2025",
     bullets: [
-      "Completed hands-on AI training covering Machine Learning, NLP workflows, deep learning basics, Knowledge Graphs, AI agents, automation concepts, testing, and version control.",
-      "Worked in a team on AI-powered product concepts, model integration, documentation, deployment preparation, and final pitch delivery.",
-      "Applied digital innovation, automation concepts, and data-driven problem-solving to practical AI solution design.",
+      "Completed hands-on training in machine learning, NLP, Knowledge Graphs, AI agents, and automation.",
+      "Collaborated on AI product concepts, model integration, documentation, and deployment preparation.",
+      "Applied data-driven problem-solving to practical AI solution design.",
     ],
     technologies: ["AI", "Deep Learning", "Deployment", "Documentation", "Teamwork"],
-  },
-  {
-    role: "Full-Stack Developer Intern",
-    company: "Prodigy InfoTech",
-    location: "Remote, Mumbai",
-    dates: "Sep 2024",
-    bullets: [
-      "Developed full-stack web applications using the MERN stack, including MongoDB, Express.js, React, and Node.js.",
-      "Integrated frontend interfaces with REST API endpoints and backend logic.",
-      "Tested React UI flows, forms, API integrations, responsive behavior, and endpoint behavior using Postman.",
-    ],
-    technologies: ["MongoDB", "Express.js", "React", "Node.js", "CSS"],
   },
 ];
 
